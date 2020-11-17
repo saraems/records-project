@@ -8,7 +8,16 @@ class RecordsController extends Controller
 {
     public function index()
     {
-        echo 'Welcome on records!';
-        // return view('welcome');
+        return view('records/records');
+    }
+
+    public function add()
+    {
+        return view('records/add');
+    }
+
+    public function save()
+    {
+        echo 'Saved !';
     }
 }

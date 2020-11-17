@@ -16,10 +16,19 @@ use App\Http\Controllers\RecordsController;
 
 Route::get('/', function ()
     {
-        echo 'Hello World !';
-        // return view('welcome');
+        // echo 'Hello World !';
+        return view('welcome');
     });
 
 
 Route::get('/records', [RecordsController::class, 'index']);
+Route::get('/add', [RecordsController::class, 'add']);
+Route::post('/add', [
+    'uses' => 'RecordsController@save',
+    'as' => 'records.save'
+]);
+
+
+Auth::routes();
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
